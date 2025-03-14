@@ -1,28 +1,27 @@
+import { useSelector } from 'react-redux'
 import Contato from '../../components/Cards'
 import { ContainerCards } from './styles'
+import { RootReducer } from '../../store'
 
-const contatos = [
-  {
-    contato: 'Lisa',
-    telefone: 21964700514,
-    email: 'lisam@gmail.com'
-  },
-  {
-    contato: 'Vivian',
-    telefone: 21964709021,
-    email: 'viviamk@gmail.com'
-  }
-]
-const ListaDeContatos = () => (
-  <ContainerCards>
-    <ul>
-      {contatos.map((c) => (
-        <li key={c.contato}>
-          <Contato contato={c.contato} telefone={c.telefone} email={c.email} />
-        </li>
-      ))}
-    </ul>
-  </ContainerCards>
-)
+const ListaDeContatos = () => {
+  const { itens } = useSelector((state: RootReducer) => state.contatos)
+
+  return (
+    <ContainerCards>
+      <ul>
+        {itens.map((c) => (
+          <li key={c.nome}>
+            <Contato
+              nome={c.nome}
+              telefone={c.telefone}
+              email={c.email}
+              id={c.id}
+            />
+          </li>
+        ))}
+      </ul>
+    </ContainerCards>
+  )
+}
 
 export default ListaDeContatos
