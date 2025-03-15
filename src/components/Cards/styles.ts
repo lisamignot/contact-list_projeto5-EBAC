@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import variaveis from '../../styles/variaveis'
 import { Botao } from '../../styles'
+import { Campo } from '../../containers/BarraDeBusca/styles'
 
 export const Card = styled.div`
   background-color: ${variaveis.branco};
@@ -40,4 +41,10 @@ export const BotaoSalvar = styled(Botao)`
 export const BotaoNegativo = styled(Botao)`
   background-color: ${variaveis.vermelho};
   margin-right: 12px;
+`
+
+export const ItensEmEdicao = styled(Campo)`
+  display: block;
+  width: 50%;
+  margin-bottom: 16px;
 `
