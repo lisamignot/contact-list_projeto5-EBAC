@@ -12,9 +12,15 @@ const ListaDeContatos = () => {
       return itens
     }
 
-    return itens.filter((item) =>
-      item.nome.toLowerCase().includes(busca.toLowerCase())
-    )
+    return itens.filter((item) => {
+      const termo = busca.toLowerCase()
+
+      return (
+        item.nome.toLowerCase().includes(termo) ||
+        item.telefone.toLowerCase().includes(termo) ||
+        item.email.toLowerCase().includes(termo)
+      )
+    })
   }
 
   return (
