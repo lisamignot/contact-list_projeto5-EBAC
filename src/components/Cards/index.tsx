@@ -58,8 +58,8 @@ const Contato = ({
       ) : (
         <>
           <S.Nome>{nomeOriginal}</S.Nome>
-          <S.Telefone>{telefoneOriginal}</S.Telefone>
-          <S.Email>{emailOriginal}</S.Email>
+          <S.Dados>{telefoneOriginal}</S.Dados>
+          <S.Dados>{emailOriginal}</S.Dados>
         </>
       )}
 

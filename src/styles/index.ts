@@ -16,6 +16,15 @@ export const Container = styled.main`
   height: 90vh;
 `
 
+export const Titulo = styled.h1`
+  background-color: ${variaveis.azul};
+  border-radius: 0 0 10px 10px;
+  color: ${variaveis.branco};
+  text-align: center;
+  padding-top: 24px;
+  padding-bottom: 24px;
+`
+
 export const Botao = styled.button`
   font-size: 12px;
   font-weight: bold;
@@ -25,6 +34,23 @@ export const Botao = styled.button`
   cursor: pointer;
   background-color: ${variaveis.cinza};
   border-radius: 8px;
+  margin-top: 24px;
+  margin-right: 12px;
 `
 
+export const Campo = styled.input`
+  border-radius: 8px;
+  padding: 8px;
+  background-color: ${variaveis.branco};
+  color: ${variaveis.azul};
+  border-color: ${variaveis.azul};
+  font-weight: bold;
+  margin-top: 24px;
+  display: block;
+  width: 100%;
+`
+
+export const BotaoBuscaEAdicao = styled(Botao)`
+  background-color: ${variaveis.verde};
+`
 export default EstiloGlobal

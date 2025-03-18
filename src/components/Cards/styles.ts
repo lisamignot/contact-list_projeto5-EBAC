@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 import variaveis from '../../styles/variaveis'
-import { Botao } from '../../styles'
-import { Campo } from '../../containers/BarraDeBusca/styles'
+import { Botao, Campo } from '../../styles'
 
 export const Card = styled.div`
   background-color: ${variaveis.branco};
@@ -18,14 +17,9 @@ export const Nome = styled.h3`
   padding-bottom: 16px;
 `
 
-export const Telefone = styled.p`
+export const Dados = styled.p`
   margin-bottom: 12px;
   font-size: 14px;
-`
-
-export const Email = styled.p`
-  font-size: 14px;
-  margin-bottom: 12px;
 `
 
 export const BarraDeAcoes = styled.div`
@@ -40,7 +34,6 @@ export const BotaoSalvar = styled(Botao)`
 `
 export const BotaoNegativo = styled(Botao)`
   background-color: ${variaveis.vermelho};
-  margin-right: 12px;
 `
 
 export const ItensEmEdicao = styled(Campo)`

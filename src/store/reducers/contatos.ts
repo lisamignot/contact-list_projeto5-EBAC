@@ -43,6 +43,13 @@ const contatosSlice = createSlice({
       if (indexDoContato >= 0) {
         state.itens[indexDoContato] = action.payload
       }
+    },
+    cadastrar: (state, action: PayloadAction<Contato>) => {
+      const contatoExiste = state.itens.find(
+        (contato =
+          contato.nome.toLowerCase() === action.payload.nome.toLowerCase())
+      )
+      
     }
   }
 })

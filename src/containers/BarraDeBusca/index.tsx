@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux'
-import { Botao } from '../../styles'
-import { ContainerBusca, Campo, BotaoBusca } from './styles'
+import { Botao, BotaoBuscaEAdicao, Campo } from '../../styles'
+import { ContainerBusca } from './styles'
 import { alteraBusca } from '../../store/reducers/filtro'
 import { useState } from 'react'
 
@@ -25,7 +25,7 @@ const BarraDeBusca = () => {
         value={termoBusca}
         onChange={(e) => setTermoBusca(e.target.value)}
       />
-      <BotaoBusca onClick={buscar}>BUSCAR</BotaoBusca>
+      <BotaoBuscaEAdicao onClick={buscar}>BUSCAR</BotaoBuscaEAdicao>
       <Botao onClick={limpaBusca}>Limpar Busca</Botao>
     </ContainerBusca>
   )
