@@ -1,16 +1,18 @@
+import { useSelector } from 'react-redux'
+import { RootReducer } from '../../store'
 import * as S from './styles'
 
-export type Props = {
-  contador: number
-}
+const Cabecalho = () => {
+  const { itens } = useSelector((state: RootReducer) => state.contatos)
 
-const Cabecalho = ({ contador }: Props) => (
-  <>
-    <S.Titulo>MEUS CONTATOS</S.Titulo>
-    <S.Subtitulo>
-      <S.Contador>{contador}</S.Contador> contatos cadastrados.
-    </S.Subtitulo>
-  </>
-)
+  return (
+    <>
+      <S.Titulo>MEUS CONTATOS</S.Titulo>
+      <S.Subtitulo>
+        <S.Contador>{itens.length}</S.Contador> contatos cadastrados.
+      </S.Subtitulo>
+    </>
+  )
+}
 
 export default Cabecalho
