@@ -45,15 +45,31 @@ const contatosSlice = createSlice({
       }
     },
     cadastrar: (state, action: PayloadAction<Contato>) => {
-      const contatoExiste = state.itens.find(
-        (contato =
-          contato.nome.toLowerCase() === action.payload.nome.toLowerCase())
-      )
-      
+      const dadosDuplicados: string[] = []
+
+      const contatoExiste = state.itens.find((contato) => {
+        const nomeDuplicado =
+          contato.nome.toLowerCase() === action.payload.nome.toLowerCase()
+        const telefoneDuplicado = contato.telefone === action.payload.telefone
+        const emailDuplicado =
+          contato.email.toLowerCase() === action.payload.email.toLowerCase()
+
+        if (nomeDuplicado) dadosDuplicados.push('Nome já cadastrado.')
+        if (telefoneDuplicado) dadosDuplicados.push('Telefone já cadastrado.')
+        if (emailDuplicado) dadosDuplicados.push('Email já cadastrado.')
+
+        return nomeDuplicado || telefoneDuplicado || emailDuplicado
+      })
+
+      if (contatoExiste) {
+        alert(`Erro ao cadastrar: ${dadosDuplicados.join(', ')}`)
+      } else {
+        state.itens.push(action.payload)
+      }
     }
   }
 })
 
-export const { remover, editar } = contatosSlice.actions
+export const { remover, editar, cadastrar } = contatosSlice.actions
 
 export default contatosSlice.reducer
