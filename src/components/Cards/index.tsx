@@ -66,7 +66,7 @@ const Contato = ({
       <S.BarraDeAcoes>
         {estaEditando ? (
           <>
-            <Botao onClick={cancelarEdicao}>Cancelar</Botao>
+            <Botao onClick={cancelarEdicao}>CANCELAR</Botao>
             <S.BotaoSalvar
               onClick={() => {
                 dispatch(
@@ -80,15 +80,15 @@ const Contato = ({
                 setEstaEditando(false)
               }}
             >
-              Salvar
+              SALVAR
             </S.BotaoSalvar>
           </>
         ) : (
           <>
             <S.BotaoNegativo onClick={() => dispatch(remover(id))}>
-              Excluir
+              EXCLUIR
             </S.BotaoNegativo>
-            <Botao onClick={() => setEstaEditando(true)}>Editar</Botao>
+            <Botao onClick={() => setEstaEditando(true)}>EDITAR</Botao>
           </>
         )}
       </S.BarraDeAcoes>

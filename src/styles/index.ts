@@ -35,7 +35,7 @@ export const Botao = styled.button`
   background-color: ${variaveis.cinza};
   border-radius: 8px;
   margin-top: 24px;
-  margin-right: 12px;
+  margin-left: 12px;
 `
 
 export const Campo = styled.input`
@@ -49,8 +49,8 @@ export const Campo = styled.input`
   display: block;
   width: 100%;
 `
-
 export const BotaoBuscaEAdicao = styled(Botao)`
   background-color: ${variaveis.verde};
 `
+
 export default EstiloGlobal
